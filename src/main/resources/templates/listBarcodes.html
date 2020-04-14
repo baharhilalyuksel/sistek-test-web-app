@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Sistek Test Web Uygulaması</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="header">
+			<h2>Sistek Test Web Uygulaması</h2>
+			<form action="#" th:action="@{/home}" method="GET">
+			  <button type="submit" class="btn btn-primary">Ana sayfa</button>
+			</form>	
+		</div>
+		
+		<hr>
+		
+	    <h3>Barkodlar</h3>
+	    
+	    <div>
+	   		<form action="#" th:action="@{/searchBarcodes}" method="GET">
+			  <div class="form-group">
+			    <label>Kullanıcı Adı : </label>
+			    <input type="text" th:name="username" class="form-control"/>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Ara</button>
+			</form>	
+	    </div>
+	    
+	    <p th:if="${#lists.isEmpty(barcodes)}">Sistemde kayıtlı barkod sayısı: 0.</p>
+	    
+	    <table class="table">
+	    	<thead th:if="${not #lists.isEmpty(barcodes)}">
+		    	<tr>
+		    		<td scope="col">Barkod</td>
+		    		<td scope="col">Kullanıcı Adı</td>
+		    	</tr>
+		    </thead>
+		    <tr th:each="barcode: ${barcodes}">
+			    <td th:text="${barcode.barcode}" />
+			    <td th:text="${barcode.user.username}" />
+			</tr>   
+	    </table>	
+	</div>
+
+</body>
+</html>

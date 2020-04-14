@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Sistek Test Web Uygulaması</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    	form > input {
+    		width: 90%;
+    	}
+    </style>
+</head>
+<body>
+	
+	<div class="container">
+	
+		<h2>Sistek Test Web Uygulaması</h2>
+
+		<hr>
+	
+		<div class="row">
+		
+			<div class="col-sm-3 col-sm-offset-3">
+			    <form action="#" th:action="@{/home}"  method="get">
+			        <input type="submit" value="Giris Yap" class="btn btn-primary"/>
+			    </form>
+    		</div>
+    		<div class="col-sm-3">
+			    <form action="#" th:action="@{/registration}"  method="get">
+			        <input type="submit" value="Kaydol" class="btn btn-primary"/>
+			    </form>
+			</div>
+		</div>
+	
+	
+	</div>
+	
+	
+
+</body>
+</html>

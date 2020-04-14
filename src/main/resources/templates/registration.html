@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Sistek Test Web Uygulaması</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+	<div class="container">
+		<h2>Sistek Test Web Uygulaması</h2>
+		
+		<hr>
+	
+		<div class="row">
+			<div class="col-sm-5">
+				<h3>Yeni Kullanıcı Oluştur</h3>
+				<form action="#" th:action="@{/register}" th:object="${user}" method="post">
+				  <div class="form-group">
+				    <label>Kullanıcı Adı : </label>
+				    <input type="text" th:field="*{username}" class="form-control"/>
+				  </div>
+				  <div class="form-group">
+				    <label>Şifre :</label>
+				    <input type="password" th:field="*{password}" class="form-control"/>
+				  </div>
+				  <button type="submit" class="btn btn-primary" style="float: left;">Kaydol</button>
+				</form>		
+				<form action="#" th:action="@{/login}"  method="get">
+		        	<button type="submit" class="btn btn-primary" style="float: right;">Giriş Yap</button>
+			    </form>	
+			</div>
+		</div>	
+		
+		
+		
+		<div class="row">
+			<div class="col-sm-2">
+<!-- 				<form action="#" th:action="@{/login}"  method="get"> -->
+<!-- 		        	<p><input type="submit" value="Giris Yap" class="btn btn-primary"/> </p> -->
+<!-- 			    </form> -->
+			</div>
+		</div>
+	
+	</div>
+
+</body>
+</html>

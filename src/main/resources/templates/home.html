@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Sistek Test Web Uygulaması</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    	.dashboard-item {
+    		border: solid gray 1px;
+    		background-color: #dddddd;
+    		height: 10em;
+    		padding: 2em;
+    	}
+    	
+    	form, .btn {
+    		width: 100%;
+    	}
+    </style>
+</head>
+<body>
+	
+	<div class="container">
+	
+		<h2>Sistek Test Web Uygulaması</h2>
+
+		<hr>
+	
+		<div class="row">
+		
+			<div class="col-sm-2">
+			    <form action="#" th:action="@{/newUser}"  method="get">
+			        <p><input type="submit" value="Yeni Kullanıcı Ekle" class="btn btn-primary"/> </p>
+			    </form>
+    		</div>
+    		<div class="col-sm-2">
+			    <form action="#" th:action="@{/listUsers}"  method="get">
+			        <p><input type="submit" value="Tüm Kullanıcıları Listele" class="btn btn-primary" style="padding-left: 8px;"/> </p>
+			    </form>
+			</div>
+    		<div class="col-sm-2">
+			    <form action="#" th:action="@{/listBarcodes}"  method="get">
+			        <p><input type="submit" value="Barkodları Listele" class="btn btn-primary"/> </p>
+			    </form>
+			</div>
+			<div class="col-sm-2">
+				<form action="#" th:action="@{/logout}"  method="get">
+		        	<p><input type="submit" value="Çıkış Yap" class="btn btn-primary"/> </p>
+			    </form>
+			</div>
+		
+		</div>
+		
+		<div class="row dashboard">
+		
+			<div class="col-sm-4">
+				<div class="dashboard-item">
+					<p>
+						Sistemdeki kullanıcı sayısı :
+					</p>
+					<p th:text="${userCount}">
+						0
+					</p>
+				</div>
+    		</div>
+    		<div class="col-sm-4 col-sm-offset-1">
+    			<div class="dashboard-item">
+					<p>
+						Sistemdeki barkod sayısı :
+					</p>
+					<p th:text="${barcodeCount}">
+						0
+					</p>
+				</div>
+			</div>
+		
+		</div>
+	
+	
+	</div>
+	
+	
+
+</body>
+</html>

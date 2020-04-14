@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Sistek Test Web Uygulaması</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="header">
+			<h2>Sistek Test Web Uygulaması</h2>
+			<form action="#" th:action="@{/home}" method="GET">
+			  <button type="submit" class="btn btn-primary">Ana sayfa</button>
+			</form>	
+		</div>
+		
+		<hr>
+		
+	    <h3>Kullanıcılar</h3>
+	    <table class="table">
+	    	<thead>
+		    	<tr>
+		    		<td scope="col">Kullanıcı Id</td>
+		    		<td scope="col">Kullanıcı Adı</td>
+		    		<td scope="col">Kullanıcı Düzenle</td>
+		    	</tr>
+		    </thead>
+		    <tr th:each="user: ${users}">
+			    <td th:text="${user.id}" />
+			    <td th:text="${user.username}" />
+			    <td>
+			    	<form action="#" th:action="@{/editUser}"  method="get">
+			    		<input type="hidden" name="id" th:value="*{user.id}" >
+				        <input type="submit" value="Düzenle" class="btn btn-primary"/>
+				    </form>
+			    </td>
+			</tr>   
+	    </table>	
+	</div>
+
+</body>
+</html>
