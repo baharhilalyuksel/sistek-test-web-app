@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "users")
@@ -16,9 +17,11 @@ public class User {
 	@Column(name = "id")
 	private int id;
 	
+	@NotEmpty(message = "Geçersiz kullanıcı adı")
 	@Column(name = "username", unique = true)
 	private String username;
 	
+	@NotEmpty(message = "Geçersiz şifre")
 	@Column(name = "password")
 	private String password;
 	

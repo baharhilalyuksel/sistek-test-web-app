@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "authorities")
@@ -16,7 +18,9 @@ public class Authority {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "username")
+	@NotEmpty
+	@NotNull
+	@Column(name = "username", unique = true)
 	private String username;
 	
 	@Column(name = "authority")

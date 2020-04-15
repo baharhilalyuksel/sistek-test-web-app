@@ -19,6 +19,6 @@ public interface UserDAO extends Repository<User, Long>{
 
 	public User findUserById(int id);
 	
-	
-	
+	public Boolean existsByUsername(String username);
+
 }

@@ -12,4 +12,8 @@ public interface UserService {
 
 	public User getUserById(int id);
 
+	public Boolean existsByUsername(String username);
+
+	void updateUser(User user);
+
 }
